@@ -1,0 +1,12 @@
+## Interface: 30100
+## Title: Cuddly Raider
+## Author: Haste
+## Version: 1.0
+## X-eMail: troeks@gmail.com
+## Notes: Raid add-on for Cuddle Vendor.
+## Dependencies: epgp
+
+cuddlyraider.lua
+
+leader\calendar.lua
+
