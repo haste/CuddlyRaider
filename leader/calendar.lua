@@ -1,5 +1,5 @@
--- Bail out early if the player isn't an officer or EPGP isn't loaded.
-if(not CanEditOfficerNote() and EPGP) then return end
+-- Bail out early if the player isn't an officer.
+if(not CanEditOfficerNote()) then return end
 
 -- Table of officers in the guild.
 local officers = {}
@@ -34,7 +34,7 @@ local GUILD_ROSTER_UPDATE = function(self, event)
 	for i=1,num do
 		local name, rank, rankIndex = GetGuildRosterInfo(i)
 		if(rankIndex <= 1) then
-			officers[EPGP:GetMain(name)] = true
+			officers[name] = true
 		end
 	end
 end
