@@ -8,14 +8,15 @@ local officers = {}
 local blockEvents = 0
 
 local CALENDAR_UPDATE_INVITE_LIST = function(self, event)
+	-- Bail if the calendar isn't shown.
+	if(not CalendarCreateEventFrame or not CalendarCreateEventFrame:IsShown()) then return end
+
 	-- Prevent us from doing extra parses when we hammer inn the invite status.
 	if(blockEvents > 0) then
 		blockEvents = blockEvents - 1
 		return
 	end
 
-	-- Bail if the calendar isn't shown.
-	if(not CalendarCreateEventFrame:IsShown()) then return end
 
 	if(CalendarEventCanEdit()) then
 		local num = CalendarEventGetNumInvites()
